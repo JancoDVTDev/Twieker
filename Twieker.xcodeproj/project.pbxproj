@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		61619A4D24D17F3A007DC29D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A4C24D17F3A007DC29D /* AppDelegate.swift */; };
 		61619A4F24D17F3A007DC29D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A4E24D17F3A007DC29D /* SceneDelegate.swift */; };
-		61619A5124D17F3A007DC29D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A5024D17F3A007DC29D /* ViewController.swift */; };
 		61619A5424D17F3A007DC29D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61619A5224D17F3A007DC29D /* Main.storyboard */; };
 		61619A5724D17F3A007DC29D /* Twieker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61619A5524D17F3A007DC29D /* Twieker.xcdatamodeld */; };
 		61619A5924D17F3B007DC29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61619A5824D17F3B007DC29D /* Assets.xcassets */; };
@@ -39,7 +38,6 @@
 		61619A4924D17F3A007DC29D /* Twieker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twieker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61619A4C24D17F3A007DC29D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61619A4E24D17F3A007DC29D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61619A5024D17F3A007DC29D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61619A5324D17F3A007DC29D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61619A5624D17F3A007DC29D /* Twieker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Twieker.xcdatamodel; sourceTree = "<group>"; };
 		61619A5824D17F3B007DC29D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			children = (
 				61619A4C24D17F3A007DC29D /* AppDelegate.swift */,
 				61619A4E24D17F3A007DC29D /* SceneDelegate.swift */,
-				61619A5024D17F3A007DC29D /* ViewController.swift */,
 				61619A5224D17F3A007DC29D /* Main.storyboard */,
 				61619A5824D17F3B007DC29D /* Assets.xcassets */,
 				61619A5A24D17F3B007DC29D /* LaunchScreen.storyboard */,
@@ -262,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61619A5124D17F3A007DC29D /* ViewController.swift in Sources */,
 				61619A4D24D17F3A007DC29D /* AppDelegate.swift in Sources */,
 				61619A4F24D17F3A007DC29D /* SceneDelegate.swift in Sources */,
 				61619A5724D17F3A007DC29D /* Twieker.xcdatamodeld in Sources */,

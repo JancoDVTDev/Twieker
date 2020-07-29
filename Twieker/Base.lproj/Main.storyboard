@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y3E-33-8Sc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Search-->
+        <scene sceneID="Hav-Fp-cdR">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="Search" id="XSX-h2-RQ1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6q5-A2-AOE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Rm0-6E-NWt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="duW-3p-mXk"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xF-tH-8VM">
+                                <rect key="frame" x="16" y="148" width="382" height="649"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Rm0-6E-NWt" firstAttribute="top" secondItem="7uW-PM-EsU" secondAttribute="top" id="BEu-nt-zYB"/>
+                            <constraint firstItem="4xF-tH-8VM" firstAttribute="top" secondItem="Rm0-6E-NWt" secondAttribute="bottom" constant="16" id="Clp-dp-0Ri"/>
+                            <constraint firstItem="7uW-PM-EsU" firstAttribute="bottom" secondItem="4xF-tH-8VM" secondAttribute="bottom" constant="16" id="Epo-HO-bPe"/>
+                            <constraint firstItem="Rm0-6E-NWt" firstAttribute="trailing" secondItem="7uW-PM-EsU" secondAttribute="trailing" id="JZs-Vi-1zO"/>
+                            <constraint firstItem="4xF-tH-8VM" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="16" id="dUm-uU-EZU"/>
+                            <constraint firstItem="7uW-PM-EsU" firstAttribute="trailing" secondItem="4xF-tH-8VM" secondAttribute="trailing" constant="16" id="juE-9H-ETS"/>
+                            <constraint firstItem="Rm0-6E-NWt" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" id="pwa-6O-WrG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7uW-PM-EsU"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Search" id="iij-Qt-unq"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGj-4H-nEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2125" y="-188"/>
+        </scene>
+        <!--Trending-->
+        <scene sceneID="xQZ-zU-jwS">
+            <objects>
+                <navigationController title="Trending" automaticallyAdjustsScrollViewInsets="NO" id="yHS-KM-DSa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="jsD-dr-nEd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oCC-t6-pPm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XSX-h2-RQ1" kind="relationship" relationship="rootViewController" id="4CY-ZF-Rov"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGP-tP-zG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="-188"/>
+        </scene>
+        <!--Trends-->
+        <scene sceneID="TZY-5L-Cbx">
+            <objects>
+                <viewController title="Trends" id="NjL-Im-1IF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vDv-Yh-dqv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="59q-DB-vG1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trending" id="xmF-gi-fzJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjQ-8K-npH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2125" y="534"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Wnv-ge-CcU">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Y3E-33-8Sc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6DF-RA-ooj">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yHS-KM-DSa" kind="relationship" relationship="viewControllers" id="O7R-UD-Y2t"/>
+                        <segue destination="WEQ-1M-NjM" kind="relationship" relationship="viewControllers" id="BIo-3g-5PC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqU-M3-M4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="168.75"/>
+        </scene>
+        <!--Trending-->
+        <scene sceneID="irV-tp-GJ1">
+            <objects>
+                <navigationController title="Trending" automaticallyAdjustsScrollViewInsets="NO" id="WEQ-1M-NjM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="flame" catalog="system" id="uax-pg-Etv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rjz-fe-Ysy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NjL-Im-1IF" kind="relationship" relationship="rootViewController" id="ROZ-Sc-xFt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHK-jV-ido" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140.5797101449277" y="534.375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flame" catalog="system" width="109" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
 </document>
