@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		61619A4D24D17F3A007DC29D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A4C24D17F3A007DC29D /* AppDelegate.swift */; };
+		61619A4F24D17F3A007DC29D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A4E24D17F3A007DC29D /* SceneDelegate.swift */; };
+		61619A5124D17F3A007DC29D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A5024D17F3A007DC29D /* ViewController.swift */; };
+		61619A5424D17F3A007DC29D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61619A5224D17F3A007DC29D /* Main.storyboard */; };
+		61619A5724D17F3A007DC29D /* Twieker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61619A5524D17F3A007DC29D /* Twieker.xcdatamodeld */; };
+		61619A5924D17F3B007DC29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61619A5824D17F3B007DC29D /* Assets.xcassets */; };
+		61619A5C24D17F3B007DC29D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61619A5A24D17F3B007DC29D /* LaunchScreen.storyboard */; };
+		61619A6724D17F3B007DC29D /* TwiekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A6624D17F3B007DC29D /* TwiekerTests.swift */; };
+		61619A7224D17F3B007DC29D /* TwiekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A7124D17F3B007DC29D /* TwiekerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61619A6324D17F3B007DC29D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61619A4124D17F3A007DC29D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61619A4824D17F3A007DC29D;
+			remoteInfo = Twieker;
+		};
+		61619A6E24D17F3B007DC29D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61619A4124D17F3A007DC29D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61619A4824D17F3A007DC29D;
+			remoteInfo = Twieker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		61619A4924D17F3A007DC29D /* Twieker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twieker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61619A4C24D17F3A007DC29D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		61619A4E24D17F3A007DC29D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		61619A5024D17F3A007DC29D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		61619A5324D17F3A007DC29D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		61619A5624D17F3A007DC29D /* Twieker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Twieker.xcdatamodel; sourceTree = "<group>"; };
+		61619A5824D17F3B007DC29D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61619A5B24D17F3B007DC29D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61619A5D24D17F3B007DC29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61619A6224D17F3B007DC29D /* TwiekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61619A6624D17F3B007DC29D /* TwiekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiekerTests.swift; sourceTree = "<group>"; };
+		61619A6824D17F3B007DC29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61619A6D24D17F3B007DC29D /* TwiekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61619A7124D17F3B007DC29D /* TwiekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiekerUITests.swift; sourceTree = "<group>"; };
+		61619A7324D17F3B007DC29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		61619A4624D17F3A007DC29D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61619A5F24D17F3B007DC29D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61619A6A24D17F3B007DC29D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		61619A4024D17F3A007DC29D = {
+			isa = PBXGroup;
+			children = (
+				61619A4B24D17F3A007DC29D /* Twieker */,
+				61619A6524D17F3B007DC29D /* TwiekerTests */,
+				61619A7024D17F3B007DC29D /* TwiekerUITests */,
+				61619A4A24D17F3A007DC29D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		61619A4A24D17F3A007DC29D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61619A4924D17F3A007DC29D /* Twieker.app */,
+				61619A6224D17F3B007DC29D /* TwiekerTests.xctest */,
+				61619A6D24D17F3B007DC29D /* TwiekerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61619A4B24D17F3A007DC29D /* Twieker */ = {
+			isa = PBXGroup;
+			children = (
+				61619A4C24D17F3A007DC29D /* AppDelegate.swift */,
+				61619A4E24D17F3A007DC29D /* SceneDelegate.swift */,
+				61619A5024D17F3A007DC29D /* ViewController.swift */,
+				61619A5224D17F3A007DC29D /* Main.storyboard */,
+				61619A5824D17F3B007DC29D /* Assets.xcassets */,
+				61619A5A24D17F3B007DC29D /* LaunchScreen.storyboard */,
+				61619A5D24D17F3B007DC29D /* Info.plist */,
+				61619A5524D17F3A007DC29D /* Twieker.xcdatamodeld */,
+			);
+			path = Twieker;
+			sourceTree = "<group>";
+		};
+		61619A6524D17F3B007DC29D /* TwiekerTests */ = {
+			isa = PBXGroup;
+			children = (
+				61619A6624D17F3B007DC29D /* TwiekerTests.swift */,
+				61619A6824D17F3B007DC29D /* Info.plist */,
+			);
+			path = TwiekerTests;
+			sourceTree = "<group>";
+		};
+		61619A7024D17F3B007DC29D /* TwiekerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				61619A7124D17F3B007DC29D /* TwiekerUITests.swift */,
+				61619A7324D17F3B007DC29D /* Info.plist */,
+			);
+			path = TwiekerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		61619A4824D17F3A007DC29D /* Twieker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61619A7624D17F3B007DC29D /* Build configuration list for PBXNativeTarget "Twieker" */;
+			buildPhases = (
+				61619A4524D17F3A007DC29D /* Sources */,
+				61619A4624D17F3A007DC29D /* Frameworks */,
+				61619A4724D17F3A007DC29D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Twieker;
+			productName = Twieker;
+			productReference = 61619A4924D17F3A007DC29D /* Twieker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		61619A6124D17F3B007DC29D /* TwiekerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61619A7924D17F3B007DC29D /* Build configuration list for PBXNativeTarget "TwiekerTests" */;
+			buildPhases = (
+				61619A5E24D17F3B007DC29D /* Sources */,
+				61619A5F24D17F3B007DC29D /* Frameworks */,
+				61619A6024D17F3B007DC29D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61619A6424D17F3B007DC29D /* PBXTargetDependency */,
+			);
+			name = TwiekerTests;
+			productName = TwiekerTests;
+			productReference = 61619A6224D17F3B007DC29D /* TwiekerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		61619A6C24D17F3B007DC29D /* TwiekerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61619A7C24D17F3B007DC29D /* Build configuration list for PBXNativeTarget "TwiekerUITests" */;
+			buildPhases = (
+				61619A6924D17F3B007DC29D /* Sources */,
+				61619A6A24D17F3B007DC29D /* Frameworks */,
+				61619A6B24D17F3B007DC29D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61619A6F24D17F3B007DC29D /* PBXTargetDependency */,
+			);
+			name = TwiekerUITests;
+			productName = TwiekerUITests;
+			productReference = 61619A6D24D17F3B007DC29D /* TwiekerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61619A4124D17F3A007DC29D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = DVT;
+				TargetAttributes = {
+					61619A4824D17F3A007DC29D = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					61619A6124D17F3B007DC29D = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 61619A4824D17F3A007DC29D;
+					};
+					61619A6C24D17F3B007DC29D = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 61619A4824D17F3A007DC29D;
+					};
+				};
+			};
+			buildConfigurationList = 61619A4424D17F3A007DC29D /* Build configuration list for PBXProject "Twieker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 61619A4024D17F3A007DC29D;
+			productRefGroup = 61619A4A24D17F3A007DC29D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61619A4824D17F3A007DC29D /* Twieker */,
+				61619A6124D17F3B007DC29D /* TwiekerTests */,
+				61619A6C24D17F3B007DC29D /* TwiekerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61619A4724D17F3A007DC29D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61619A5C24D17F3B007DC29D /* LaunchScreen.storyboard in Resources */,
+				61619A5924D17F3B007DC29D /* Assets.xcassets in Resources */,
+				61619A5424D17F3A007DC29D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61619A6024D17F3B007DC29D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61619A6B24D17F3B007DC29D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61619A4524D17F3A007DC29D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61619A5124D17F3A007DC29D /* ViewController.swift in Sources */,
+				61619A4D24D17F3A007DC29D /* AppDelegate.swift in Sources */,
+				61619A4F24D17F3A007DC29D /* SceneDelegate.swift in Sources */,
+				61619A5724D17F3A007DC29D /* Twieker.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61619A5E24D17F3B007DC29D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61619A6724D17F3B007DC29D /* TwiekerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61619A6924D17F3B007DC29D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61619A7224D17F3B007DC29D /* TwiekerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61619A6424D17F3B007DC29D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61619A4824D17F3A007DC29D /* Twieker */;
+			targetProxy = 61619A6324D17F3B007DC29D /* PBXContainerItemProxy */;
+		};
+		61619A6F24D17F3B007DC29D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61619A4824D17F3A007DC29D /* Twieker */;
+			targetProxy = 61619A6E24D17F3B007DC29D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		61619A5224D17F3A007DC29D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61619A5324D17F3A007DC29D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		61619A5A24D17F3B007DC29D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61619A5B24D17F3B007DC29D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		61619A7424D17F3B007DC29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		61619A7524D17F3B007DC29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		61619A7724D17F3B007DC29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 533WL8M2YN;
+				INFOPLIST_FILE = Twieker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jancoerasmus.Twieker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		61619A7824D17F3B007DC29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 533WL8M2YN;
+				INFOPLIST_FILE = Twieker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jancoerasmus.Twieker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		61619A7A24D17F3B007DC29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 533WL8M2YN;
+				INFOPLIST_FILE = TwiekerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jancoerasmus.TwiekerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twieker.app/Twieker";
+			};
+			name = Debug;
+		};
+		61619A7B24D17F3B007DC29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 533WL8M2YN;
+				INFOPLIST_FILE = TwiekerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jancoerasmus.TwiekerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twieker.app/Twieker";
+			};
+			name = Release;
+		};
+		61619A7D24D17F3B007DC29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 533WL8M2YN;
+				INFOPLIST_FILE = TwiekerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jancoerasmus.TwiekerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Twieker;
+			};
+			name = Debug;
+		};
+		61619A7E24D17F3B007DC29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 533WL8M2YN;
+				INFOPLIST_FILE = TwiekerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jancoerasmus.TwiekerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Twieker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		61619A4424D17F3A007DC29D /* Build configuration list for PBXProject "Twieker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61619A7424D17F3B007DC29D /* Debug */,
+				61619A7524D17F3B007DC29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61619A7624D17F3B007DC29D /* Build configuration list for PBXNativeTarget "Twieker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61619A7724D17F3B007DC29D /* Debug */,
+				61619A7824D17F3B007DC29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61619A7924D17F3B007DC29D /* Build configuration list for PBXNativeTarget "TwiekerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61619A7A24D17F3B007DC29D /* Debug */,
+				61619A7B24D17F3B007DC29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61619A7C24D17F3B007DC29D /* Build configuration list for PBXNativeTarget "TwiekerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61619A7D24D17F3B007DC29D /* Debug */,
+				61619A7E24D17F3B007DC29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61619A5524D17F3A007DC29D /* Twieker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61619A5624D17F3A007DC29D /* Twieker.xcdatamodel */,
+			);
+			currentVersion = 61619A5624D17F3A007DC29D /* Twieker.xcdatamodel */;
+			path = Twieker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 61619A4124D17F3A007DC29D /* Project object */;
+}
