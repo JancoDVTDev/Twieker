@@ -10,36 +10,41 @@
         <!--Search-->
         <scene sceneID="Hav-Fp-cdR">
             <objects>
-                <viewController title="Search" id="XSX-h2-RQ1" sceneMemberID="viewController">
+                <viewController title="Search" id="XSX-h2-RQ1" customClass="SearchViewController" customModule="Twieker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6q5-A2-AOE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Rm0-6E-NWt">
+                            <searchBar contentMode="redraw" placeholder="Tweets" translatesAutoresizingMaskIntoConstraints="NO" id="Rm0-6E-NWt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="duW-3p-mXk"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xF-tH-8VM">
-                                <rect key="frame" x="16" y="148" width="382" height="649"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xF-tH-8VM">
+                                <rect key="frame" x="8" y="140" width="398" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="scrollIndicatorInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="top" secondItem="7uW-PM-EsU" secondAttribute="top" id="BEu-nt-zYB"/>
-                            <constraint firstItem="4xF-tH-8VM" firstAttribute="top" secondItem="Rm0-6E-NWt" secondAttribute="bottom" constant="16" id="Clp-dp-0Ri"/>
-                            <constraint firstItem="7uW-PM-EsU" firstAttribute="bottom" secondItem="4xF-tH-8VM" secondAttribute="bottom" constant="16" id="Epo-HO-bPe"/>
+                            <constraint firstItem="4xF-tH-8VM" firstAttribute="top" secondItem="Rm0-6E-NWt" secondAttribute="bottom" constant="8" id="Clp-dp-0Ri"/>
+                            <constraint firstItem="7uW-PM-EsU" firstAttribute="bottom" secondItem="4xF-tH-8VM" secondAttribute="bottom" constant="8" id="Epo-HO-bPe"/>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="trailing" secondItem="7uW-PM-EsU" secondAttribute="trailing" id="JZs-Vi-1zO"/>
-                            <constraint firstItem="4xF-tH-8VM" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="16" id="dUm-uU-EZU"/>
-                            <constraint firstItem="7uW-PM-EsU" firstAttribute="trailing" secondItem="4xF-tH-8VM" secondAttribute="trailing" constant="16" id="juE-9H-ETS"/>
+                            <constraint firstItem="4xF-tH-8VM" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="8" id="dUm-uU-EZU"/>
+                            <constraint firstItem="7uW-PM-EsU" firstAttribute="trailing" secondItem="4xF-tH-8VM" secondAttribute="trailing" constant="8" id="juE-9H-ETS"/>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" id="pwa-6O-WrG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7uW-PM-EsU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="iij-Qt-unq"/>
+                    <connections>
+                        <outlet property="tweetSearchBar" destination="Rm0-6E-NWt" id="1pD-mc-18Z"/>
+                        <outlet property="tweetsResultTableView" destination="4xF-tH-8VM" id="8Qz-9E-NOf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGj-4H-nEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,6 +91,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Y3E-33-8Sc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6DF-RA-ooj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
