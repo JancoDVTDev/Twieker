@@ -12,9 +12,9 @@ class TwitterAPIRepository: TwitterAPIRepositorable {
   
   var session: URLSession = URLSession.shared
   
-  func fetchTweetsRequest(query: String,
+  func fetchTweetsRequest(query: String, resultType: ResultType,
                           completion: @escaping (_ tweets: [Tweet]?, _ error: String?) -> Void) {
-    let resourceString = "\(Constants.searchResourceString)\(query)"
+    let resourceString = "\(Constants.searchResourceString)&q=\(query)&result_type=\(resultType.value)"
     guard let resourceURL = URL(string: resourceString) else { return }
     
     var request = URLRequest(url: resourceURL)
