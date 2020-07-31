@@ -16,8 +16,11 @@
 		61619A6724D17F3B007DC29D /* TwiekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A6624D17F3B007DC29D /* TwiekerTests.swift */; };
 		61619A7224D17F3B007DC29D /* TwiekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A7124D17F3B007DC29D /* TwiekerUITests.swift */; };
 		61619A8224D19646007DC29D /* TwitterAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A8124D19646007DC29D /* TwitterAPIRepository.swift */; };
-		61619A8524D19716007DC29D /* StandardSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A8424D19716007DC29D /* StandardSearch.swift */; };
+		61619A8524D19716007DC29D /* StandardSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A8424D19716007DC29D /* StandardSearchModel.swift */; };
 		61619A8B24D1AC93007DC29D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61619A8A24D1AC93007DC29D /* SearchViewController.swift */; };
+		61BC82AA24D2DE1100D87837 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BC82A924D2DE1100D87837 /* SearchViewModel.swift */; };
+		61BC82AC24D2DE5B00D87837 /* SearchViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BC82AB24D2DE5B00D87837 /* SearchViewModelable.swift */; };
+		61BC82AE24D2DF1B00D87837 /* SearchViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BC82AD24D2DF1B00D87837 /* SearchViewable.swift */; };
 		61D5211224D213020084EC69 /* SearchCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5211024D213020084EC69 /* SearchCardTableViewCell.swift */; };
 		61D5211324D213020084EC69 /* SearchCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61D5211124D213020084EC69 /* SearchCardTableViewCell.xib */; };
 		61D5211C24D29B960084EC69 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5211B24D29B960084EC69 /* Strings.swift */; };
@@ -58,8 +61,11 @@
 		61619A7124D17F3B007DC29D /* TwiekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiekerUITests.swift; sourceTree = "<group>"; };
 		61619A7324D17F3B007DC29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61619A8124D19646007DC29D /* TwitterAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPIRepository.swift; sourceTree = "<group>"; };
-		61619A8424D19716007DC29D /* StandardSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSearch.swift; sourceTree = "<group>"; };
+		61619A8424D19716007DC29D /* StandardSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSearchModel.swift; sourceTree = "<group>"; };
 		61619A8A24D1AC93007DC29D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		61BC82A924D2DE1100D87837 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		61BC82AB24D2DE5B00D87837 /* SearchViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelable.swift; sourceTree = "<group>"; };
+		61BC82AD24D2DF1B00D87837 /* SearchViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewable.swift; sourceTree = "<group>"; };
 		61D5211024D213020084EC69 /* SearchCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardTableViewCell.swift; sourceTree = "<group>"; };
 		61D5211124D213020084EC69 /* SearchCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCardTableViewCell.xib; sourceTree = "<group>"; };
 		61D5211B24D29B960084EC69 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -150,26 +156,28 @@
 		61619A7F24D19515007DC29D /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				61619A8324D196F0007DC29D /* Model */,
+				61BC82A824D2DDAE00D87837 /* ViewModel */,
 				61619A8924D1AC81007DC29D /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
 		};
-		61619A8024D19625007DC29D /* Requests */ = {
+		61619A8024D19625007DC29D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				61619A8124D19646007DC29D /* TwitterAPIRepository.swift */,
 				61D5211F24D29E4A0084EC69 /* TwitterAPIRepositorable.swift */,
 			);
-			path = Requests;
+			path = Repository;
 			sourceTree = "<group>";
 		};
-		61619A8324D196F0007DC29D /* DecodableModels */ = {
+		61619A8324D196F0007DC29D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				61619A8424D19716007DC29D /* StandardSearch.swift */,
+				61619A8424D19716007DC29D /* StandardSearchModel.swift */,
 			);
-			path = DecodableModels;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		61619A8924D1AC81007DC29D /* View */ = {
@@ -177,8 +185,18 @@
 			children = (
 				61D5210F24D212CE0084EC69 /* Card */,
 				61619A8A24D1AC93007DC29D /* SearchViewController.swift */,
+				61BC82AD24D2DF1B00D87837 /* SearchViewable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		61BC82A824D2DDAE00D87837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61BC82A924D2DE1100D87837 /* SearchViewModel.swift */,
+				61BC82AB24D2DE5B00D87837 /* SearchViewModelable.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		61D5210F24D212CE0084EC69 /* Card */ = {
@@ -193,8 +211,7 @@
 		61D5211924D29ADA0084EC69 /* TwitterAPI */ = {
 			isa = PBXGroup;
 			children = (
-				61619A8324D196F0007DC29D /* DecodableModels */,
-				61619A8024D19625007DC29D /* Requests */,
+				61619A8024D19625007DC29D /* Repository */,
 			);
 			path = TwitterAPI;
 			sourceTree = "<group>";
@@ -340,15 +357,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61BC82AA24D2DE1100D87837 /* SearchViewModel.swift in Sources */,
 				61619A8B24D1AC93007DC29D /* SearchViewController.swift in Sources */,
 				61D5211E24D29BA70084EC69 /* UIElements.swift in Sources */,
 				61619A8224D19646007DC29D /* TwitterAPIRepository.swift in Sources */,
-				61619A8524D19716007DC29D /* StandardSearch.swift in Sources */,
+				61619A8524D19716007DC29D /* StandardSearchModel.swift in Sources */,
 				61D5212024D29E4A0084EC69 /* TwitterAPIRepositorable.swift in Sources */,
 				61D5211224D213020084EC69 /* SearchCardTableViewCell.swift in Sources */,
+				61BC82AE24D2DF1B00D87837 /* SearchViewable.swift in Sources */,
 				61619A4D24D17F3A007DC29D /* AppDelegate.swift in Sources */,
 				61619A4F24D17F3A007DC29D /* SceneDelegate.swift in Sources */,
 				61619A5724D17F3A007DC29D /* Twieker.xcdatamodeld in Sources */,
+				61BC82AC24D2DE5B00D87837 /* SearchViewModelable.swift in Sources */,
 				61D5211C24D29B960084EC69 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

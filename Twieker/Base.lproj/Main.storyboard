@@ -15,40 +15,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Tweets" translatesAutoresizingMaskIntoConstraints="NO" id="Rm0-6E-NWt">
+                            <searchBar contentMode="redraw" placeholder="Topics" translatesAutoresizingMaskIntoConstraints="NO" id="Rm0-6E-NWt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="duW-3p-mXk"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xF-tH-8VM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRX-yK-eVv">
                                 <rect key="frame" x="8" y="140" width="398" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <inset key="scrollIndicatorInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bSN-Rb-7ec">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="top" secondItem="7uW-PM-EsU" secondAttribute="top" id="BEu-nt-zYB"/>
-                            <constraint firstItem="4xF-tH-8VM" firstAttribute="top" secondItem="Rm0-6E-NWt" secondAttribute="bottom" constant="8" id="Clp-dp-0Ri"/>
-                            <constraint firstItem="7uW-PM-EsU" firstAttribute="bottom" secondItem="4xF-tH-8VM" secondAttribute="bottom" constant="8" id="Epo-HO-bPe"/>
+                            <constraint firstItem="7uW-PM-EsU" firstAttribute="bottom" secondItem="wRX-yK-eVv" secondAttribute="bottom" constant="8" id="BXu-HO-ej7"/>
+                            <constraint firstItem="wRX-yK-eVv" firstAttribute="top" secondItem="Rm0-6E-NWt" secondAttribute="bottom" constant="8" id="JMp-Z5-yKF"/>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="trailing" secondItem="7uW-PM-EsU" secondAttribute="trailing" id="JZs-Vi-1zO"/>
-                            <constraint firstItem="4xF-tH-8VM" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="8" id="dUm-uU-EZU"/>
-                            <constraint firstItem="7uW-PM-EsU" firstAttribute="trailing" secondItem="4xF-tH-8VM" secondAttribute="trailing" constant="8" id="juE-9H-ETS"/>
+                            <constraint firstItem="bSN-Rb-7ec" firstAttribute="centerY" secondItem="6q5-A2-AOE" secondAttribute="centerY" id="hg6-hZ-FX7"/>
+                            <constraint firstItem="wRX-yK-eVv" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="8" id="iEF-2P-m81"/>
+                            <constraint firstItem="7uW-PM-EsU" firstAttribute="trailing" secondItem="wRX-yK-eVv" secondAttribute="trailing" constant="8" id="mGN-Ja-9NT"/>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" id="pwa-6O-WrG"/>
+                            <constraint firstItem="bSN-Rb-7ec" firstAttribute="centerX" secondItem="6q5-A2-AOE" secondAttribute="centerX" id="zv8-pg-6k6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7uW-PM-EsU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="iij-Qt-unq"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="bSN-Rb-7ec" id="dzR-pE-jyP"/>
                         <outlet property="tweetSearchBar" destination="Rm0-6E-NWt" id="1pD-mc-18Z"/>
-                        <outlet property="tweetsResultTableView" destination="4xF-tH-8VM" id="8Qz-9E-NOf"/>
+                        <outlet property="tweetsResultTableView" destination="wRX-yK-eVv" id="enB-7A-udo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGj-4H-nEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2125" y="-188"/>
+            <point key="canvasLocation" x="2124.6376811594205" y="-188.16964285714286"/>
         </scene>
         <!--Trending-->
         <scene sceneID="xQZ-zU-jwS">

@@ -34,3 +34,15 @@ extension UIImageView {
     }.resume()
   }
 }
+
+extension UIActivityIndicatorView {
+  func start() {
+    self.startAnimating()
+    self.isHidden = false
+  }
+  
+  func stop() {
+    self.stopAnimating()
+    self.isHidden = true
+  }
+}
