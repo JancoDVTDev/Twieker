@@ -11,4 +11,5 @@ import Foundation
 protocol SearchViewable: AnyObject {
   func updateTweets(with results: [Tweet])
   func errorFound(with message: String)
+  func noTweetsFound()
 }

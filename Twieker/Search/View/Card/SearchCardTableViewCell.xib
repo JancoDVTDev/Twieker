@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +22,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFU-7Y-KW7">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="40"/>
-                                <color key="backgroundColor" red="0.41176470590000003" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="MainUIColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8Fu-xj-IdF"/>
                                 </constraints>
@@ -159,5 +160,8 @@
     <resources>
         <image name="Verified" width="1600" height="900"/>
         <image name="clock" catalog="system" width="128" height="121"/>
+        <namedColor name="MainUIColor">
+            <color red="0.20392156862745098" green="0.71372549019607845" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

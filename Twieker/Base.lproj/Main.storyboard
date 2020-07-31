@@ -22,10 +22,33 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRX-yK-eVv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRX-yK-eVv">
                                 <rect key="frame" x="8" y="140" width="398" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cdB-Cp-L4M">
+                                <rect key="frame" x="52" y="207" width="310" height="482"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoResult" translatesAutoresizingMaskIntoConstraints="NO" id="0vT-jF-ojE">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="406"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0vT-jF-ojE" secondAttribute="height" multiplier="120:157" id="nvw-Z0-f9w"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tweets Found!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFs-XA-gmP">
+                                        <rect key="frame" x="65" y="414" width="180.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try a different topic to see what people are tweeting." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiM-C3-waN">
+                                        <rect key="frame" x="26.5" y="448.5" width="257" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bSN-Rb-7ec">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
@@ -34,11 +57,14 @@
                         <constraints>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="top" secondItem="7uW-PM-EsU" secondAttribute="top" id="BEu-nt-zYB"/>
                             <constraint firstItem="7uW-PM-EsU" firstAttribute="bottom" secondItem="wRX-yK-eVv" secondAttribute="bottom" constant="8" id="BXu-HO-ej7"/>
+                            <constraint firstAttribute="trailing" secondItem="cdB-Cp-L4M" secondAttribute="trailing" constant="52" id="Djr-he-Fm4"/>
+                            <constraint firstItem="cdB-Cp-L4M" firstAttribute="centerY" secondItem="6q5-A2-AOE" secondAttribute="centerY" id="Gpe-F0-JlO"/>
                             <constraint firstItem="wRX-yK-eVv" firstAttribute="top" secondItem="Rm0-6E-NWt" secondAttribute="bottom" constant="8" id="JMp-Z5-yKF"/>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="trailing" secondItem="7uW-PM-EsU" secondAttribute="trailing" id="JZs-Vi-1zO"/>
                             <constraint firstItem="bSN-Rb-7ec" firstAttribute="centerY" secondItem="6q5-A2-AOE" secondAttribute="centerY" id="hg6-hZ-FX7"/>
                             <constraint firstItem="wRX-yK-eVv" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="8" id="iEF-2P-m81"/>
                             <constraint firstItem="7uW-PM-EsU" firstAttribute="trailing" secondItem="wRX-yK-eVv" secondAttribute="trailing" constant="8" id="mGN-Ja-9NT"/>
+                            <constraint firstItem="cdB-Cp-L4M" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" constant="52" id="pow-nd-DqS"/>
                             <constraint firstItem="Rm0-6E-NWt" firstAttribute="leading" secondItem="7uW-PM-EsU" secondAttribute="leading" id="pwa-6O-WrG"/>
                             <constraint firstItem="bSN-Rb-7ec" firstAttribute="centerX" secondItem="6q5-A2-AOE" secondAttribute="centerX" id="zv8-pg-6k6"/>
                         </constraints>
@@ -47,6 +73,7 @@
                     <navigationItem key="navigationItem" title="Search" id="iij-Qt-unq"/>
                     <connections>
                         <outlet property="activityIndicator" destination="bSN-Rb-7ec" id="dzR-pE-jyP"/>
+                        <outlet property="noTweetsFoundStackView" destination="cdB-Cp-L4M" id="oQ3-yz-YSR"/>
                         <outlet property="tweetSearchBar" destination="Rm0-6E-NWt" id="1pD-mc-18Z"/>
                         <outlet property="tweetsResultTableView" destination="wRX-yK-eVv" id="enB-7A-udo"/>
                     </connections>
@@ -130,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NoResult" width="480" height="640"/>
         <image name="flame" catalog="system" width="109" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>

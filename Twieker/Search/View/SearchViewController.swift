@@ -12,6 +12,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
   @IBOutlet var tweetSearchBar: UISearchBar!
   @IBOutlet var tweetsResultTableView: UITableView!
   @IBOutlet var activityIndicator: UIActivityIndicatorView!
+  @IBOutlet var noTweetsFoundStackView: UIStackView!
   
   var viewModel: SearchViewModelable!
   var tweets = [Tweet]()
@@ -54,6 +55,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
   }
   
   func searchTopics() {
+    changeUIState(to: .displayingTweets)
     guard let topic = tweetSearchBar.text else { return }
     if topic != "" {
       activityIndicator.start()
@@ -84,6 +86,25 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     segmentedControl.addTarget(self, action: #selector(self.segmentedControllerDidChange(_:)), for: .valueChanged)
     
     tweetsResultTableView.tableHeaderView = segmentedControl
+  }
+  
+  private func changeUIState(to state: UIStates) {
+    switch state {
+    case .displayingTweets:
+      displayTweetResults()
+    case .noTweetsFound:
+      displayNoTweetsFound()
+    }
+  }
+  
+  private func displayTweetResults() {
+    tweetsResultTableView.isHidden = false
+    noTweetsFoundStackView.isHidden = true
+  }
+  
+  private func displayNoTweetsFound() {
+    tweetsResultTableView.isHidden = true
+    noTweetsFoundStackView.isHidden = false
   }
 }
 
@@ -117,6 +138,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: SearchViewable {
+  func noTweetsFound() {
+    DispatchQueue.main.async {
+      self.changeUIState(to: .noTweetsFound)
+      self.activityIndicator.stop()
+    }
+  }
+  
   func errorFound(with message: String) {
     let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -130,6 +158,11 @@ extension SearchViewController: SearchViewable {
       self.activityIndicator.stop()
     }
   }
+}
+
+enum UIStates {
+  case displayingTweets
+  case noTweetsFound
 }
 
 enum ResultType {
