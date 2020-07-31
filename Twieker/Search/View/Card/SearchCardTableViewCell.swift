@@ -39,7 +39,7 @@ class SearchCardTableViewCell: UITableViewCell {
     coverHeaderView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     coverHeaderView.layer.cornerRadius = cardRadius
     coverHeaderView.clipsToBounds = true
-    coverHeaderView.alpha = 0.3
+    coverHeaderView.alpha = 0.5
     
     profileImageImageView.layer.cornerRadius = profileImageImageView.frame.height/2
     profileImageImageView.layer.masksToBounds = true

@@ -22,12 +22,16 @@ class SearchViewModel: SearchViewModelable {
         self.view?.errorFound(with: error)
       } else {
         guard let tweets = tweets else { return }
-        var mutableTweets = tweets
-        for index in 0..<mutableTweets.count {
-          let customDate = self.createCustomDate(with: tweets[index].created_at)
-          mutableTweets[index].created_at = customDate
+        if tweets.isEmpty {
+          self.view?.noTweetsFound()
+        } else {
+          var mutableTweets = tweets
+          for index in 0..<mutableTweets.count {
+            let customDate = self.createCustomDate(with: tweets[index].created_at)
+            mutableTweets[index].created_at = customDate
+          }
+          self.view?.updateTweets(with: mutableTweets)
         }
-        self.view?.updateTweets(with: mutableTweets)
       }
     })
   }
