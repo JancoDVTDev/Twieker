@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TwitterAPIRepositorable: AnyObject {
-  var session: URLSession { get set }
-  func fetchTweetsRequest(query: String, resultType: ResultType,
-                          completion: @escaping (_ tweets: [Tweet]?, _ error: String?) -> Void)
+  var session: URLSession { get }
+  func fetchTweetsRequest(searchTerm: String, filterType: FilterType,
+                          completion: @escaping (Result<[Tweet], Error>) -> Void)
 }

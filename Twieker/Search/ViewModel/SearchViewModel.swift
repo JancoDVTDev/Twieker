@@ -9,35 +9,39 @@
 import Foundation
 import UIKit
 
-class SearchViewModel: SearchViewModelable {
+class SearchViewModel {
   
   weak var view: SearchViewable?
-  var repo: TwitterAPIRepositorable?
+  private lazy var repo = TwitterAPIRepository()
+  private (set) var tweets = [Tweet]()
   
-  func search(for query: String, with resultType: ResultType) {
-    let urlReadyQuery = query.replacingOccurrences(of: " ", with: "%20")
-    
-    repo?.fetchTweetsRequest(query: urlReadyQuery, resultType: resultType, completion: { (tweets, error) in
-      if let error = error {
-        self.view?.errorFound(with: error)
-      } else {
-        guard let tweets = tweets else { return }
-        if tweets.isEmpty {
-          self.view?.noTweetsFound()
-        } else {
-          var mutableTweets = tweets
-          for index in 0..<mutableTweets.count {
-            let customDate = self.createCustomDate(with: tweets[index].created_at)
-            mutableTweets[index].created_at = customDate
-          }
-          self.view?.updateTweets(with: mutableTweets)
+  func search(for searchTerm: String, with filterType: FilterType) {
+    let trimmedSearchTerm = searchTerm.replacingOccurrences(of: " ", with: "%20")
+        
+    repo.fetchTweetsRequest(searchTerm: trimmedSearchTerm, filterType: filterType, completion: { (result) in
+      
+      do {
+        let tweets = try result.get()
+        var mutableTweets = tweets
+        for index in 0..<mutableTweets.count {
+          let customDate = self.createTimePostedString(with: tweets[index].createdAt)
+          mutableTweets[index].createdAt = customDate
         }
+        self.tweets = mutableTweets
+        self.view?.tweetsFound()
+      } catch {
+        self.view?.displayError(with: error.localizedDescription)
       }
     })
   }
   
-  func createCountSuffix(from count: Int) -> String {
-    var suffix = String()
+  func getTweet(indexPath: IndexPath) -> Tweet{
+    let index = indexPath.row
+    return tweets[index]
+  }
+  
+  func createCountSuffix(from count: Int) -> String {   //Apple does it in the Number formatter
+    let suffix: String
     var stringCount = String(count)
     
     if count > 999999 {
@@ -46,19 +50,21 @@ class SearchViewModel: SearchViewModelable {
     } else if count < 1000000 && count > 999 {
       suffix = "k"
       stringCount = String(stringCount.dropLast(3))
+    } else {
+      suffix = ""
     }
     
     return "\(stringCount)\(suffix)"
   }
   
-  private func createCustomDate(with stringDate: String) -> String {
+  private func createTimePostedString(with stringDate: String) -> String {
     let calendar = Calendar.current
     guard let date = convertStringToDate(with: stringDate) else { return "N/A" }
     let second = calendar.component(.second, from: date)
     let minute = calendar.component(.minute, from: date)
     let hour = calendar.component(.hour, from: date)
     
-    var customDate = String()
+    let customDate: String
     
     if second < 60 && minute == 0 && hour == 0 {
       customDate = "\(second) seconds ago"
@@ -86,5 +92,19 @@ class SearchViewModel: SearchViewModelable {
     dateFormatter.timeZone = TimeZone.current
     dateFormatter.locale = Locale.current
     return dateFormatter.date(from: string)
+  }
+}
+
+enum FilterType {
+  case recent
+  case popular
+  
+  var value: String {
+    switch self {
+    case .recent:
+      return "recent"
+    case .popular:
+      return "popular"
+    }
   }
 }

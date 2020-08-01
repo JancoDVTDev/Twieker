@@ -7,35 +7,31 @@
 //
 
 import UIKit
-
 class SearchViewController: UIViewController, UISearchBarDelegate {
-  @IBOutlet var tweetSearchBar: UISearchBar!
-  @IBOutlet var tweetsResultTableView: UITableView!
-  @IBOutlet var activityIndicator: UIActivityIndicatorView!
-  @IBOutlet var noTweetsFoundStackView: UIStackView!
+  @IBOutlet private var tweetSearchBar: UISearchBar!
+  @IBOutlet private var tweetsResultTableView: UITableView!
+  @IBOutlet private var activityIndicator: UIActivityIndicatorView!
+  @IBOutlet private var noTweetsFoundStackView: UIStackView!
   
-  var viewModel: SearchViewModelable!
-  var tweets = [Tweet]()
-  
-  var restultType: ResultType = .recent
+  private lazy var viewModel = SearchViewModel()
+  private var filterType: FilterType = .recent
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    activityIndicator.isHidden = true
     
     let onViewTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
     self.view.addGestureRecognizer(onViewTap)
     
-    activityIndicator.isHidden = true
-    
-    viewModel = SearchViewModel()
-    
-    viewModel.repo = TwitterAPIRepository()
     viewModel.view = self
             
     tweetSearchBar.delegate = self
     tweetsResultTableView.delegate = self
     tweetsResultTableView.dataSource = self
-    createTableViewHeader()
+    
+    let segmentedControl = createSegmentedControl()
+    tweetsResultTableView.tableHeaderView = segmentedControl
+    
     configureTweetCellNib()
   }
       
@@ -47,22 +43,22 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     let index = segmentedController.selectedSegmentIndex
     switch index {
     case 1:
-      restultType = .popular
+      filterType = .popular
     default:
-      restultType = .recent
+      filterType = .recent
     }
     searchTopics()
   }
   
-  func searchTopics() {
+  private func searchTopics() {
     changeUIState(to: .displayingTweets)
     guard let topic = tweetSearchBar.text else { return }
     if topic != "" {
       activityIndicator.start()
-      viewModel.search(for: topic, with: restultType)
+      viewModel.search(for: topic, with: filterType)
       dismissKeyboard()
     } else {
-      errorFound(with: "Please type a topic")
+      displayError(with: "Please type a topic")
     }
   }
   
@@ -78,14 +74,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
   }
   
-  private func createTableViewHeader() {
+  private func createSegmentedControl() -> UIView {
     let frame = CGRect(x: 0, y: 0, width: tweetsResultTableView.frame.width, height: 34)
     let segmentedControl = UISegmentedControl(items: ["Recent", "Popular"])
     segmentedControl.frame = frame
     segmentedControl.selectedSegmentIndex = 0
-    segmentedControl.addTarget(self, action: #selector(self.segmentedControllerDidChange(_:)), for: .valueChanged)
+    segmentedControl.addTarget(self, action: #selector(segmentedControllerDidChange), for: .valueChanged)
     
-    tweetsResultTableView.tableHeaderView = segmentedControl
+    return segmentedControl
   }
   
   private func changeUIState(to state: UIStates) {
@@ -110,7 +106,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tweets.count
+    return viewModel.tweets.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,18 +116,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                                                                 return cell
     }
     
-    let index = indexPath.item
-    cell.profileImageImageView.downloaded(from: tweets[index].user.profile_image_url_https)
-    if tweets[index].user.verified {
+    let tweet = viewModel.getTweet(indexPath: indexPath)
+    cell.profileImageImageView.downloaded(from: tweet.user.profileImageUrl)
+    if tweet.user.verified {
       cell.verifiedIconImageView.isHidden = false
     } else {
       cell.verifiedIconImageView.isHidden = true
     }
-    cell.followersCountLabel.text = viewModel.createCountSuffix(from: tweets[index].user.followers_count)
-    cell.friendsCountLabel.text = viewModel.createCountSuffix(from: tweets[index].user.friends_count)
-    cell.userNameLabel.text = tweets[index].user.name
-    cell.statusTextTextView.text = tweets[index].text
-    cell.createdAtLabel.text = tweets[index].created_at
+    cell.followersCountLabel.text = tweet.user.followersCount.stringSuffix()
+    cell.friendsCountLabel.text = tweet.user.friendsCount.stringSuffix()
+    cell.userNameLabel.text = tweet.user.name
+    cell.statusTextTextView.text = tweet.text
+    cell.createdAtLabel.text = tweet.createdAt
     
     return cell
   }
@@ -145,14 +141,13 @@ extension SearchViewController: SearchViewable {
     }
   }
   
-  func errorFound(with message: String) {
+  func displayError(with message: String) {
     let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     present(alert, animated: true, completion: nil)
   }
   
-  func updateTweets(with results: [Tweet]) {
-    tweets = results
+  func tweetsFound() {
     DispatchQueue.main.async {
       self.tweetsResultTableView.reloadData()
       self.activityIndicator.stop()
@@ -163,18 +158,4 @@ extension SearchViewController: SearchViewable {
 enum UIStates {
   case displayingTweets
   case noTweetsFound
-}
-
-enum ResultType {
-  case recent
-  case popular
-  
-  var value: String {
-    switch self {
-    case .recent:
-      return "recent"
-    case .popular:
-      return "popular"
-    }
-  }
 }
