@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y3E-33-8Sc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHS-KM-DSa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -23,7 +23,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRX-yK-eVv">
-                                <rect key="frame" x="8" y="140" width="398" height="665"/>
+                                <rect key="frame" x="8" y="140" width="398" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cdB-Cp-L4M">
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGj-4H-nEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124.6376811594205" y="-188.16964285714286"/>
+            <point key="canvasLocation" x="1957" y="-188"/>
         </scene>
         <!--Trending-->
         <scene sceneID="xQZ-zU-jwS">
@@ -101,64 +101,9 @@
             </objects>
             <point key="canvasLocation" x="1143" y="-188"/>
         </scene>
-        <!--Trends-->
-        <scene sceneID="TZY-5L-Cbx">
-            <objects>
-                <viewController title="Trends" id="NjL-Im-1IF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vDv-Yh-dqv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="59q-DB-vG1"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Trending" id="xmF-gi-fzJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vjQ-8K-npH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2125" y="534"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Wnv-ge-CcU">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Y3E-33-8Sc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6DF-RA-ooj">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="yHS-KM-DSa" kind="relationship" relationship="viewControllers" id="O7R-UD-Y2t"/>
-                        <segue destination="WEQ-1M-NjM" kind="relationship" relationship="viewControllers" id="BIo-3g-5PC"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wqU-M3-M4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="208.69565217391306" y="168.75"/>
-        </scene>
-        <!--Trending-->
-        <scene sceneID="irV-tp-GJ1">
-            <objects>
-                <navigationController title="Trending" automaticallyAdjustsScrollViewInsets="NO" id="WEQ-1M-NjM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="flame" catalog="system" id="uax-pg-Etv"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rjz-fe-Ysy">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NjL-Im-1IF" kind="relationship" relationship="rootViewController" id="ROZ-Sc-xFt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yHK-jV-ido" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1140.5797101449277" y="534.375"/>
-        </scene>
     </scenes>
     <resources>
         <image name="NoResult" width="480" height="640"/>
-        <image name="flame" catalog="system" width="109" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>

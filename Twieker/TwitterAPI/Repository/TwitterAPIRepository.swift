@@ -10,11 +10,11 @@ import Foundation
 
 class TwitterAPIRepository: TwitterAPIRepositorable {
   
-  var session: URLSession = URLSession.shared
+  let session: URLSession = URLSession.shared
   
-  func fetchTweetsRequest(query: String, resultType: ResultType,
-                          completion: @escaping (_ tweets: [Tweet]?, _ error: String?) -> Void) {
-    let resourceString = "\(Constants.searchResourceString)&q=\(query)&result_type=\(resultType.value)"
+  func fetchTweetsRequest(searchTerm: String, filterType: FilterType,
+                          completion: @escaping (Result<[Tweet], Error>) -> Void) {
+    let resourceString = "\(Constants.searchResourceString)&q=\(searchTerm)&result_type=\(filterType.value)"
     guard let resourceURL = URL(string: resourceString) else { return }
     
     var request = URLRequest(url: resourceURL)
@@ -23,16 +23,16 @@ class TwitterAPIRepository: TwitterAPIRepositorable {
     
     let dataTask = session.dataTask(with: request) { data, response, error in
       if let error = error {
-        completion(nil, error.localizedDescription)
+        completion(.failure(error))
       } else {
         if let jsonData = data {
           do {
             let decoder = JSONDecoder()
             let response = try decoder.decode(SearchResponse.self, from: jsonData)
             let tweets = response.statuses
-            completion(tweets, nil)
+            completion(.success(tweets))
           } catch {
-            completion(nil, "Cannot process data")
+            completion(.failure(error))
           }
         }
       }
