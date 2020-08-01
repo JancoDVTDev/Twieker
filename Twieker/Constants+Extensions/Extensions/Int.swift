@@ -13,9 +13,12 @@ extension Int {
     let string: String
     let suffix: String
     
-    if self > 999999 {
+    if self > 999999999 {
+      suffix = "B"
+      string = String(String(self).dropLast(9))
+    } else if self < 1000000000 && self > 999999 {
       suffix = "M"
-      string = String(String(self).dropLast(5))
+      string = String(String(self).dropLast(6))
     } else if self < 1000000 && self > 999 {
       suffix = "k"
       string = String(String(self).dropLast(3))
