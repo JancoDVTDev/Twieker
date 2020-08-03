@@ -2,6 +2,8 @@
 
 ## About
 
+Tweaking Twitter Tweats.
+
 Twieker allows users to search for topics on Twitter that people are tweeting about.
 
 ## Filter Tweets
@@ -22,3 +24,7 @@ The standard search API is free to use but requires a developer account to gener
 In this particular app we used the bearer token in the authorization header of the request.
 
 The standard API only focus on relevance. This means that some user's tweets may not be available. Twitter advices to rather user the Premium or Enterprise API's for completeness.
+
+## Screenshot of Twieker
+Topic: Trump
+![](Trump.png)
