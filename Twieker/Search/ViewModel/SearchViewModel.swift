@@ -12,7 +12,7 @@ import UIKit
 class SearchViewModel {
   
   weak var view: SearchViewable?
-  private lazy var repo = TwitterAPIRepository()
+  lazy var repo: TwitterAPIRepositorable = TwitterAPIRepository()
   private (set) var tweets = [Tweet]()
   
   func search(for searchTerm: String, with filterType: FilterType) {
@@ -22,41 +22,28 @@ class SearchViewModel {
       
       do {
         let tweets = try result.get()
-        var mutableTweets = tweets
-        for index in 0..<mutableTweets.count {
-          let customDate = self.createTimePostedString(with: tweets[index].createdAt)
-          mutableTweets[index].createdAt = customDate
+        if tweets.isEmpty {
+          self.view?.noTweetsFound()
+        } else {
+          var mutableTweets = tweets
+          for index in 0..<mutableTweets.count {
+            let customDate = self.createTimePostedString(with: tweets[index].createdAt)
+            mutableTweets[index].createdAt = customDate
+          }
+          self.tweets = mutableTweets
+          self.view?.tweetsFound()
         }
-        self.tweets = mutableTweets
-        self.view?.tweetsFound()
       } catch {
         self.view?.displayError(with: error.localizedDescription)
       }
     })
   }
   
-  func getTweet(indexPath: IndexPath) -> Tweet{
+  func getTweet(indexPath: IndexPath) -> Tweet {
     let index = indexPath.row
     return tweets[index]
   }
-  
-  func createCountSuffix(from count: Int) -> String {   //Apple does it in the Number formatter
-    let suffix: String
-    var stringCount = String(count)
-    
-    if count > 999999 {
-      suffix = "M"
-      stringCount = String(stringCount.dropLast(5))
-    } else if count < 1000000 && count > 999 {
-      suffix = "k"
-      stringCount = String(stringCount.dropLast(3))
-    } else {
-      suffix = ""
-    }
-    
-    return "\(stringCount)\(suffix)"
-  }
-  
+      
   private func createTimePostedString(with stringDate: String) -> String {
     let calendar = Calendar.current
     guard let date = convertStringToDate(with: stringDate) else { return "N/A" }

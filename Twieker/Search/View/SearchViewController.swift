@@ -18,21 +18,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    activityIndicator.isHidden = true
-    
-    let onViewTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-    self.view.addGestureRecognizer(onViewTap)
-    
-    viewModel.view = self
-            
-    tweetSearchBar.delegate = self
-    tweetsResultTableView.delegate = self
-    tweetsResultTableView.dataSource = self
-    
-    let segmentedControl = createSegmentedControl()
-    tweetsResultTableView.tableHeaderView = segmentedControl
-    
-    configureTweetCellNib()
+
+    setup()
   }
       
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -82,6 +69,24 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     segmentedControl.addTarget(self, action: #selector(segmentedControllerDidChange), for: .valueChanged)
     
     return segmentedControl
+  }
+  
+  private func setup() {
+    activityIndicator.isHidden = true
+    
+    let onViewTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+    self.view.addGestureRecognizer(onViewTap)
+    
+    viewModel.view = self
+            
+    tweetSearchBar.delegate = self
+    tweetsResultTableView.delegate = self
+    tweetsResultTableView.dataSource = self
+    
+    let segmentedControl = createSegmentedControl()
+    tweetsResultTableView.tableHeaderView = segmentedControl
+    
+    configureTweetCellNib()
   }
   
   private func changeUIState(to state: UIStates) {
