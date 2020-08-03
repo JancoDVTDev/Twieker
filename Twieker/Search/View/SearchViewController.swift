@@ -15,11 +15,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
   
   private lazy var viewModel = SearchViewModel()
   private var filterType: FilterType = .recent
+  private var initialTopic = "Covid 19"
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
     setup()
+    displayInitialTweets()
   }
       
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -87,6 +89,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     tweetsResultTableView.tableHeaderView = segmentedControl
     
     configureTweetCellNib()
+  }
+  
+  private func displayInitialTweets() {
+    tweetSearchBar.text = initialTopic
+    searchTopics()
   }
   
   private func changeUIState(to state: UIStates) {
