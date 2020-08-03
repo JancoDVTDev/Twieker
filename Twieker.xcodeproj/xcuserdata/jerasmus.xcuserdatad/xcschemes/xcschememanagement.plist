@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TwiekerTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>61619A4824D17F3A007DC29D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61619A6124D17F3B007DC29D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61619A6C24D17F3B007DC29D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
